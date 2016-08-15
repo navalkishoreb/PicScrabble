@@ -38,7 +38,7 @@ public class FetchImages extends Fragment {
   private Response<Puzzle> response;
   private UseCase<Puzzle> fetchPuzzle;
   private Callback callback;
-  private AsyncTask<Void, Void, Response> asyncTask;
+  private AsyncTask<Void, Void, Response<Puzzle>> asyncTask;
 
   @Override public void onAttach(Activity activity) {
     super.onAttach(activity);
@@ -67,7 +67,7 @@ public class FetchImages extends Fragment {
     }
   }
 
-  boolean isSuccessful() {
+  private boolean isSuccessful() {
     return response != null && response.isSuccessful();
   }
 
@@ -78,7 +78,7 @@ public class FetchImages extends Fragment {
     return null;
   }
 
-  private void setResponse(Response response) {
+  private void setResponse(Response<Puzzle> response) {
     if (response == null) {
       throw new IllegalArgumentException("Response can not be NULL");
     }
@@ -88,7 +88,7 @@ public class FetchImages extends Fragment {
   private void sendCallback() {
     if (isAdded()) {
       if (response.isSuccessful()) {
-        if (!(response.getData() instanceof Puzzle)) {
+        if (response.getData() == null) {
           throw new IllegalArgumentException("Need puzzle data type");
         }
         callback.onResult(response.getData());
@@ -98,9 +98,9 @@ public class FetchImages extends Fragment {
     }
   }
 
-  private class FetchImagesOnThread extends AsyncTask<Void, Void, Response> {
+  private class FetchImagesOnThread extends AsyncTask<Void, Void, Response<Puzzle>> {
 
-    @Override protected Response doInBackground(Void... voids) {
+    @Override protected Response<Puzzle> doInBackground(Void... voids) {
       Log.d("Puzzle", "response started");
       Response<Puzzle> response = fetchPuzzle.execute();
       if (response.isSuccessful()) {
@@ -112,7 +112,7 @@ public class FetchImages extends Fragment {
       return response;
     }
 
-    @Override protected void onPostExecute(Response response) {
+    @Override protected void onPostExecute(Response<Puzzle> response) {
       super.onPostExecute(response);
       Log.d("Puzzle", "onPostExecute");
       asyncTask = null;
