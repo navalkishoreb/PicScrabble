@@ -40,6 +40,7 @@ public class FetchImages extends Fragment {
   private Callback callback;
   private AsyncTask<Void, Void, Response<Puzzle>> asyncTask;
 
+  @SuppressWarnings("deprecation")
   @Override public void onAttach(Activity activity) {
     super.onAttach(activity);
     if (!(activity instanceof Callback)) {
