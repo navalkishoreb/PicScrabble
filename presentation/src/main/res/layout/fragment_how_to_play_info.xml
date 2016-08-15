@@ -1,0 +1,28 @@
+<LinearLayout
+    xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:layout_marginTop="@dimen/info_margin_top"
+    android:layout_marginLeft="@dimen/info_margin_side"
+    android:layout_marginRight="@dimen/info_margin_side"
+    android:orientation="vertical"
+    >
+  <TextView
+      style="@style/InfoText"
+      android:textStyle="bold"
+      android:text="@string/you_will_be_shown"
+      />
+  <TextView
+      style="@style/InfoText"
+      android:text="@string/remember_their_location"
+      />
+  <TextView
+      style="@style/InfoText"
+      android:text="@string/then_we_will_puzzle_you"
+      />
+
+</LinearLayout>
+
+
+
+

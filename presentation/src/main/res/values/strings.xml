@@ -1,0 +1,27 @@
+<resources>
+  <string name="app_name">Pic Scramble</string>
+
+  <string name="tag_how_to_play_info">tag_HowToPlayInfo</string>
+  <string name="tag_loading_images">tag_LoadingImages</string>
+  <string name="tag_new_game">tag_NewGame</string>
+  <string name="tag_RandomImage">tag_RandomImage</string>
+  <string name="tag_MarkAnswer">tag_MarkAnswer</string>
+
+  <string name="tag_FetchImages">tag_FetchImages</string>
+
+  <string name="key_game_state">game_state</string>
+
+  <string name="action_play">Play Now</string>
+  <string name="loading_images_text">Fetching images to play…</string>
+  <string name="action_restart">Again!!</string>
+
+
+  <string name="action_waiting">waiting</string>
+  <string name="action_puzzle_me">Puzzle me</string>
+  <string name="action_ready">Where was it?</string>
+
+  <string name="remember">Remember, remember</string>
+  <string name="you_will_be_shown">You will be shown 9 images for 15 seconds.</string>
+  <string name="remember_their_location">Remember their location in grid.</string>
+  <string name="then_we_will_puzzle_you">Then, we will puzzle you.</string>
+</resources>
