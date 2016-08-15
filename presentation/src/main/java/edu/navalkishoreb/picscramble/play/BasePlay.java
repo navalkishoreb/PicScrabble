@@ -3,6 +3,7 @@ package edu.navalkishoreb.picscramble.play;
 import android.os.Bundle;
 import android.support.annotation.Nullable;
 import android.support.v4.app.Fragment;
+import android.util.Log;
 import edu.navalkishoreb.domain.model.Image;
 import edu.navalkishoreb.domain.model.Puzzle;
 import edu.navalkishoreb.picscramble.R;
@@ -196,11 +197,24 @@ abstract class BasePlay extends BaseActivity implements PlayArea, GameSequence {
   }
 
   @Override public void onError(String errorMessage) {
-
+    Log.d("Puzzle", errorMessage);
+    attachError(errorMessage);
   }
 
   @Override public void correctAnswer() {
     answeredCorrectly = true;
     showBottomBar();
+  }
+
+  @Override public void retry() {
+    loadImages();
+  }
+
+  private void attachError(String errorMessage) {
+    hideBottomBar();
+    hideActionBar();
+    resetValues();
+    Fragment fragment = FetchError.newInstance(errorMessage);
+    setFragment(fragment, getString(R.string.tag_FetchError));
   }
 }

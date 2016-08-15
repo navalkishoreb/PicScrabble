@@ -1,0 +1,31 @@
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:gravity="center"
+    android:layout_marginTop="@dimen/error_margin_top"
+    android:layout_marginRight="@dimen/error_margin_side"
+    android:layout_marginLeft="@dimen/error_margin_side"
+    tools:context="edu.navalkishoreb.picscramble.play.FetchError"
+    >
+
+  <TextView
+      android:layout_width="match_parent"
+      android:layout_height="wrap_content"
+      android:gravity="center"
+      tools:text="sdsdsdsdssdsdsdsdsadasdasdSdsdSAdsdsdadasdasdSdsdSAdsdsd"
+      android:id="@+id/error_message"
+      />
+
+  <Button
+      android:id="@+id/retry"
+      android:layout_below="@id/error_message"
+      android:layout_width="wrap_content"
+      android:layout_height="wrap_content"
+      android:layout_marginTop="@dimen/info_margin_between_text"
+      android:gravity="center"
+      android:layout_centerHorizontal="true"
+      android:text="@string/retry"
+      />
+
+</RelativeLayout>

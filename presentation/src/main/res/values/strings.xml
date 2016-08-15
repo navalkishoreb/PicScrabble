@@ -24,4 +24,9 @@
   <string name="you_will_be_shown">You will be shown 9 images for 15 seconds.</string>
   <string name="remember_their_location">Remember their location in grid.</string>
   <string name="then_we_will_puzzle_you">Then, we will puzzle you.</string>
+
+  <!-- TODO: Remove or change this placeholder text -->
+  <string name="hello_blank_fragment">Hello blank fragment</string>
+  <string name="retry">Retry</string>
+  <string name="tag_FetchError">tag_FetchError</string>
 </resources>

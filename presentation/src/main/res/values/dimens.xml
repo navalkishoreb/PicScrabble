@@ -11,4 +11,6 @@
   <dimen name="info_margin_top">60dp</dimen>
   <dimen name="info_text_size">24sp</dimen>
   <dimen name="info_margin_between_text">20dp</dimen>
+  <dimen name="error_margin_side">30dp</dimen>
+  <dimen name="error_margin_top">-40dp</dimen>
 </resources>
