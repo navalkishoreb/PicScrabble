@@ -103,8 +103,10 @@ public class FetchImages extends Fragment {
     @Override protected Response doInBackground(Void... voids) {
       Log.d("Puzzle", "response started");
       Response<Puzzle> response = fetchPuzzle.execute();
-      for (Image image : response.getData().getImageGrid()) {
-        Picasso.with(getContext()).load(image.getUrl()).priority(Picasso.Priority.HIGH).fetch();
+      if (response.isSuccessful()) {
+        for (Image image : response.getData().getImageGrid()) {
+          Picasso.with(getContext()).load(image.getUrl()).priority(Picasso.Priority.HIGH).fetch();
+        }
       }
       Log.d("Puzzle", "response received");
       return response;
